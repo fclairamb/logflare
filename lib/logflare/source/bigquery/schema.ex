@@ -103,15 +103,6 @@ defmodule Logflare.Source.BigQuery.Schema do
     GenServer.call(pid, {:update, schema}, @timeout)
   end
 
-  # @spec update_cluster(atom(), map(), map(), non_neg_integer()) :: atom
-  # def update_cluster(source_token, schema, type_map, field_count) when is_atom(source_token) do
-  #  GenServer.abcast(
-  #    Node.list(),
-  #    pid(source_token),
-  #    {:update, schema, type_map, field_count}
-  #  )
-  # end
-
   def handle_call(:get, _from, state) do
     {:reply, state, state}
   end
